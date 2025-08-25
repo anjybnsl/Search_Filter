@@ -1,0 +1,102 @@
+/* General Page Styling */
+body {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+/* Main container */
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* space between input and cards */
+}
+
+/* Input styling */
+.inp {
+  width: 300px;
+  height: 50px;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: white;
+  color: black;
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Single Card */
+.card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Image */
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Blurred overlay */
+.blurred-layer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: bottom;
+  filter: blur(10px);
+  z-index: 1;
+
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Text content on card */
+.content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+/* Username */
+.content h3 {
+  font-size: 18px;
+  color: black;
+  text-decoration: underline;
+  margin-bottom: 6px;
+}
+
+/* User Bio */
+.content p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: white;
+  text-decoration: solid;
+  font-weight: 100;
+}
